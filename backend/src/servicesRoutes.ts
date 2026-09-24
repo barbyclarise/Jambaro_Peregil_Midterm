@@ -57,7 +57,7 @@ router.patch(
       const result = await pool.query(
         `UPDATE incidents
 SET status = COALESCE($1, status),
-severity = COALESCE($2, severity),
+envi = COALESCE($2, envi),
 updated_at = NOW()
 WHERE id = $3
 RETURNING *`,

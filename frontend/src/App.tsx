@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import "./App.css";
-import { IncidentList } from "./components/incidentList";
-import { IncidentForm } from "./components/incidentForm";
+// import { ServiceList } from "./components/serviceList";
+// import { ServiceForm } from "./components/serviceForm";
 import { Button, Container } from "./components/styles";
-import { IncidentProvider } from "./context/incidentContext";
+import { MicroserviceProvider } from "./context/microserviceContext";
 import { AuthContext, AuthProvider } from "./context/authContext";
 import { AuthForm } from "./components/authForm";
+
 function MainApp() {
   const authContext = useContext(AuthContext);
   const handleLogout = () => {
@@ -20,7 +21,7 @@ function MainApp() {
           alignItems: "center",
         }}
       >
-        <h1>PulseDesk</h1>
+        <h1>Microservice</h1>
         {authContext?.state.isAuthenticated && (
           <Button onClick={handleLogout} style={{ background: "#333" }}>
             Sign Out
@@ -29,10 +30,10 @@ function MainApp() {
       </div>
       {authContext?.state.isAuthenticated ? (
         <>
-          <MicroserviceForm />
+          {/* <MicroserviceForm />
           <hr style={{ margin: "30px 0", border: "1px solid #eee" }} />
-          <h2>Incidents</h2>
-          <ServiceList />
+          <h2>Microservices</h2>
+          <ServiceList /> */}
         </>
       ) : (
         <AuthForm />
