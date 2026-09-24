@@ -28,7 +28,7 @@ export const createMicroservice = async (
 };
 export const updateMicroservice = async (
   id: number,
-  changes: { Servicestatus?: ServiceStatus; environment?: Environment },
+  changes: { status?: ServiceStatus; environment?: Environment },
 ): Promise<Microservice> => {
   const response = await fetch(`${API_BASE}/incidents/${id}`, {
     method: "PATCH",
