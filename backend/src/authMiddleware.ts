@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from "express";
 import jwt from "jsonwebtoken";
-// Must be the exact same fallback string as in authRoutes.ts
+
 const JWT_SECRET = process.env.JWT_SECRET || "fallback_secret";
 export const authenticateToken = (
   req: Request,
